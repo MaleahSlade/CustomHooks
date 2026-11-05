@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import Pagination from './Pagination.jsx';
+import SearchComponent from './components/SearchComponent';
 import data from './data/mock-data.json';
 import './style.scss';
 
@@ -79,6 +80,9 @@ export default function App() {
         pageSize={pageSize}
         onPageChange={(page: number) => setCurrentPage(page)}
       />
+
+      {/* Search for a pirate by name */}
+      <SearchComponent />
     </>
   );
 }

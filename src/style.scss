@@ -20,3 +20,15 @@ table {
 .pagination-bar {
   margin-bottom: 32px;
 }
+
+.search-section {
+  max-width: 900px;
+  margin: 48px auto;
+
+  input[type='text'] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    margin-bottom: 12px;
+  }
+}
