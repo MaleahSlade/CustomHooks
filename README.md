@@ -1,1 +1,1 @@
-- Initial build based on FreeCodeCamp tutorial https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/. Edits based on lab requirements. 
+- Initial build based on the FreeCodeCamp tutorial https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/ and the FruitSearch lab we did in class. Edits based on lab requirements. 
