@@ -1,1 +1,1 @@
-- Initial build based on FreeCodeCamp tutorial https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/. Edits based on lab requirements. 
+The Plank Ledger is Captain Hook's official employee database. The initial build is based on the FreeCodeCamp tutorial https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/ and the FruitSearch lab we did in class. The employees are mock JSON data, and the edits are based on the lab requirements. 
