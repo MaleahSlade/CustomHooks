@@ -51,6 +51,8 @@ export default function App() {
       </label>
 
 {/* Pirate Employee Table */}
+<br></br>
+<fieldset>
       <table>
         <thead>
           <tr>
@@ -73,6 +75,7 @@ export default function App() {
           ))}
         </tbody>
       </table>
+</fieldset> <br></br>
       <Pagination
         className="pagination-bar"
         currentPage={currentPage}
