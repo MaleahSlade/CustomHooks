@@ -11,19 +11,45 @@ interface Row {
   phone: string;
 }
 
-const PageSize = 10;
+// Sort by id once, outside the component (below the imports and interface).
+const sortedData: Row[] = [...data].sort((a, b) => a.id - b.id);
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState(1);
 
+ //Page size is now state, with 10 as the starting value.
+  const [pageSize, setPageSize] = useState(10);
+
+ // Uses pageSize and sortedData, and adds pageSize to the [ ] list.
   const currentTableData: Row[] = useMemo(() => {
-    const firstPageIndex = (currentPage - 1) * PageSize;
-    const lastPageIndex = firstPageIndex + PageSize;
-    return data.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage]);
+    const firstPageIndex = (currentPage - 1) * pageSize;
+    const lastPageIndex = firstPageIndex + pageSize;
+    return sortedData.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, pageSize]);
 
   return (
     <>
+        <h1>The Plank Ledger 🪝 ☠️ 🔪</h1>
+        <h2>Official Employee Database of Captain Hook ®</h2>
+{/* Label to sort Employees */}
+<label>
+        Pirates per page:{' '}
+        <select
+          value={pageSize}
+          onChange={(e) => {
+            setPageSize(Number(e.target.value));
+            setCurrentPage(1);
+          }}
+        >
+          {[5, 10, 15, 20].map((n) => (
+            <option key={n} value={n}>
+              {n}
+            </option>
+          ))}
+        </select>
+      </label>
+
+{/* Pirate Employee Table */}
       <table>
         <thead>
           <tr>
@@ -49,8 +75,8 @@ export default function App() {
       <Pagination
         className="pagination-bar"
         currentPage={currentPage}
-        totalCount={data.length}
-        pageSize={PageSize}
+        totalCount={sortedData.length}
+        pageSize={pageSize}
         onPageChange={(page: number) => setCurrentPage(page)}
       />
     </>
